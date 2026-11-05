@@ -1,29 +1,16 @@
-# Vitrina
+# nicovazzoler.github.io
 
-Mis proyectos, publicados en https://nicovazzoler.github.io
+La vitrina de mis proyectos: **https://nicovazzoler.github.io**
 
-## Sumar o cambiar un proyecto
+Son herramientas que armé para resolver problemas reales. Cada una tiene su propia página, con sus colores, capturas, qué resuelve, con qué está hecha y el enlace a su código.
 
-1. Abrí una rama.
-2. En `proyectos.json` va un bloque por proyecto: copiá uno y cambiá los datos.
-3. Las capturas van en `public/capturas/<carpeta>/`, en PNG o JPG, y se nombran en `capturas`. La primera sale
-   grande en su página y en la tarjeta de la portada. Se publican tal cual: sacalas con datos de prueba.
-4. Abrí el PR y mergealo. GitHub arma y publica el sitio solo; en la pestaña **Actions** se ve cómo va.
+## Cómo está hecho
 
-## Los campos de cada proyecto
+- **React y Vite**, sin backend. Todo el contenido sale de `proyectos.json` y las capturas de `public/capturas/<proyecto>/`, así que sumar un proyecto es agregar un bloque de datos y sus imágenes.
+- **Una dirección por proyecto** (`/salon-ivana/`, `/autortv/`). GitHub Pages solo sirve archivos, así que el build deja una copia de la página en cada carpeta, y la página lee la dirección para saber qué proyecto mostrar.
+- **Se publica sola.** Cada cambio que entra a `main` lo arma y publica un workflow de GitHub Actions.
 
-| Campo | Qué es |
-|---|---|
-| `carpeta` | La dirección del proyecto: `nicovazzoler.github.io/<carpeta>/`. Minúsculas y guiones. |
-| `titulo`, `bajada` | El nombre y una o dos frases de qué es. |
-| `estado`, `anio` | Por ejemplo «En uso» o «En desarrollo», y el año. |
-| `tema` | Los colores de la página y el emblema (`corona` o `terminal`). |
-| `resuelve` | Un párrafo: qué problema resuelve. |
-| `stack`, `bibliotecas` | Listas de nombres. |
-| `repo` | La dirección del repositorio. Vacío si no hay. |
-| `capturas` | Lista de `{ "archivo": "...", "texto": "lo que se ve" }`. |
-
-## Verlo en tu compu antes de subir
+## Correrlo localmente
 
 ```bash
 npm install

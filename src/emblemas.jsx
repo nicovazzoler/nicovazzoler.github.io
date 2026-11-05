@@ -62,10 +62,32 @@ function MarcaVela({ className }) {
   );
 }
 
+function IconoCodigo({ tamano = 26 }) {
+  return (
+    <svg width={tamano} height={tamano} viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      strokeWidth="1.8" strokeLinecap="round" aria-hidden="true">
+      <path d="M4 7 V17 M7 7 V17 M10 7 V14 M13 7 V17 M15.5 7 V14 M18 7 V17 M20 7 V17" />
+      <line x1="2.5" y1="12" x2="21.5" y2="12" strokeWidth="1.2" opacity="0.6" />
+    </svg>
+  );
+}
+
+function MarcaCodigo({ className }) {
+  return (
+    <svg className={className} viewBox="0 0 64 48" fill="none" stroke="currentColor" strokeWidth="0.8"
+      strokeLinecap="round" aria-hidden="true">
+      <path d="M10 8 V36 M14 8 V36 M17 8 V32 M22 8 V36 M26 8 V32 M29 8 V36 M34 8 V36 M38 8 V32 M41 8 V36 M46 8 V32 M50 8 V36 M54 8 V36" />
+      <line x1="6" y1="22" x2="58" y2="22" />
+      <path d="M4 4 H10 M4 4 V10 M60 4 H54 M60 4 V10 M4 44 H10 M4 44 V38 M60 44 H54 M60 44 V38" />
+    </svg>
+  );
+}
+
 export const EMBLEMAS = {
   corona: { Icono: IconoCorona, Marca: MarcaCorona },
   terminal: { Icono: IconoTerminal, Marca: MarcaTerminal },
   vela: { Icono: IconoVela, Marca: MarcaVela },
+  codigo: { Icono: IconoCodigo, Marca: MarcaCodigo },
 };
 
 export function emblemaDe(tema) {

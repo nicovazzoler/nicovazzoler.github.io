@@ -51,6 +51,24 @@
         { "archivo": "visor.jpg", "texto": "El visor: foto grande, flechas para recorrer y la consulta por WhatsApp con el producto ya escrito" },
         { "archivo": "portada.jpg", "texto": "La entrada, con la marca" }
       ]
+    },
+    {
+      "carpeta": "kioskardo",
+      "titulo": "Kioskardo",
+      "bajada": "Punto de venta para kioscos que anda en celular, tablet y PC, y sigue vendiendo sin internet: cuando vuelve la conexión, sincroniza solo.",
+      "estado": "En pausa",
+      "anio": "2026",
+      "tema": { "fondo": "#0A1312", "superficie": "#101C1B", "borde": "#1F302E", "acento": "#4FD1BC", "texto": "#E6F0EE", "texto2": "#A3B8B4", "emblema": "codigo" },
+      "resuelve": "En un kiosco la venta tiene que ser rápida y no puede frenarse porque se cortó internet. Cada producto entra escaneando el código con la pistola lectora o con la cámara del celular, el cobro calcula el vuelto y acepta hasta dos medios de pago, y la caja se cierra contando el efectivo contra lo que debería haber. El stock se calcula a partir de compras, ventas y mermas, así que siempre se puede ver de dónde sale cada número.",
+      "stack": ["Python", "FastAPI", "PostgreSQL", "React", "TypeScript", "PWA"],
+      "bibliotecas": ["SQLAlchemy", "Alembic", "Pydantic", "Tailwind CSS", "Dexie", "Vitest"],
+      "repo": "https://github.com/nicovazzoler/kioskardo",
+      "capturas": [
+        { "archivo": "venta.png", "texto": "La venta: cada producto entra escaneando su código de barras" },
+        { "archivo": "cobro.png", "texto": "El cobro, con el vuelto calculado; también se puede pagar con dos medios" },
+        { "archivo": "caja.png", "texto": "La caja del día: efectivo que debería haber, ventas por medio de pago y anulaciones" },
+        { "archivo": "inventario.png", "texto": "El inventario, con el stock bajo marcado en rojo" }
+      ]
     }
   ]
 }

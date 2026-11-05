@@ -1,0 +1,241 @@
+/* La página pública de cada proyecto, en los colores del proyecto: van por style={variables(tema)}. */
+
+.ficha-pagina {
+  --margen: clamp(18px, 4.5vw, 56px);
+  --ancho: 1180px;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  background:
+    radial-gradient(1100px 620px at 78% -8%, color-mix(in srgb, var(--acento) 15%, transparent), transparent 70%),
+    radial-gradient(800px 500px at -10% 40%, color-mix(in srgb, var(--acento) 6%, transparent), transparent 70%),
+    var(--fondo);
+  font-family: var(--cuerpo);
+  font-size: 17px;
+  line-height: 1.55;
+}
+.ficha-tenue { color: var(--texto2); }
+
+.ficha-cabecera, .ficha-contenido, .ficha-pie {
+  width: 100%;
+  max-width: calc(var(--ancho) + 2 * var(--margen));
+  margin: 0 auto;
+  padding-inline: var(--margen);
+}
+.ficha-cabecera { padding-block: 26px 0; min-height: 70px; }
+.ficha-volver {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: -6px;
+  padding: 6px 12px 6px 6px;
+  border-radius: 999px;
+  color: var(--texto2);
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+.ficha-volver:hover { background: var(--activo); color: var(--texto); }
+
+.ficha-contenido { flex: 1 0 auto; padding-bottom: clamp(56px, 8vw, 104px); }
+
+.ficha-heroe { display: grid; justify-items: start; gap: 18px; padding: clamp(36px, 7vw, 88px) 0 clamp(36px, 5vw, 60px); }
+.ficha-emblema {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background: var(--chip);
+  border: 1px solid var(--borde-acento);
+  color: var(--acento);
+}
+.ficha-heroe h1 {
+  margin: 6px 0 0;
+  font-family: var(--titulos);
+  font-variation-settings: "opsz" 96;
+  font-weight: 800;
+  font-size: clamp(52px, 9.5vw, 132px);
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  text-wrap: balance;
+}
+.ficha-bajada { margin: 0; max-width: 44ch; color: var(--texto2); font-size: clamp(19px, 2.1vw, 24px); line-height: 1.45; }
+.ficha-meta { margin: 4px 0 0; display: flex; flex-wrap: wrap; gap: 6px 20px; color: var(--texto2); font-size: 15px; font-weight: 500; }
+.ficha-estado { display: inline-flex; align-items: center; gap: 8px; color: var(--texto); }
+.ficha-estado::before { content: ""; width: 9px; height: 9px; border-radius: 50%; border: 1.5px solid var(--acento); }
+.ficha-estado.al-aire::before { background: var(--acento); box-shadow: 0 0 0 4px color-mix(in srgb, var(--acento) 22%, transparent); }
+
+/* Las capturas: la elegida grande, como la pantalla del producto, y las otras abajo. */
+.escaparate { display: grid; gap: 16px; }
+.ficha-pantalla {
+  margin: 0;
+  padding: clamp(6px, 1vw, 12px);
+  border: 1px solid var(--borde-fuerte);
+  border-radius: clamp(16px, 2vw, 26px);
+  background: color-mix(in srgb, var(--superficie) 88%, var(--acento));
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, var(--acento) 10%, transparent),
+    0 50px 100px -50px color-mix(in srgb, var(--acento) 40%, #000),
+    0 30px 60px -30px #000;
+}
+.ficha-pantalla img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: top;
+  border-radius: clamp(10px, 1.4vw, 18px);
+  background: var(--fondo);
+  animation: ficha-cambio 0.35s ease-out;
+}
+/* Sin capturas: el emblema del proyecto de fondo y el nombre, como en su tarjeta de la portada. */
+.ficha-pantalla.vacia {
+  position: relative;
+  aspect-ratio: 21 / 9;
+  display: flex;
+  align-items: flex-end;
+  padding: clamp(22px, 3.4vw, 40px);
+  overflow: hidden;
+}
+.ficha-pantalla.vacia .marca { position: absolute; inset: 0; color: var(--acento); opacity: 0.22; }
+.ficha-pantalla.vacia svg.marca { inset: 10% 22% 26%; width: auto; height: auto; }
+.ficha-pantalla.vacia p { position: relative; margin: 0; display: grid; gap: 6px; }
+.ficha-pantalla.vacia b {
+  font-family: var(--titulos);
+  font-weight: 700;
+  font-size: clamp(34px, 5vw, 64px);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--acento);
+}
+.ficha-pantalla.vacia span { color: var(--texto2); }
+
+.ficha-epigrafe { margin: 0; display: flex; justify-content: space-between; gap: 16px; color: var(--texto2); font-size: 15px; }
+.ficha-epigrafe span:first-child { color: var(--texto); max-width: 70ch; }
+.ficha-epigrafe .ficha-tenue { white-space: nowrap; font-variant-numeric: tabular-nums; }
+
+.ficha-miniaturas {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(140px, 1fr);
+  gap: 14px;
+  overflow-x: auto;
+  padding: 4px 2px 8px;
+  scrollbar-width: thin;
+}
+.ficha-miniaturas button {
+  padding: 0;
+  border: 1px solid var(--borde);
+  border-radius: 12px;
+  background: var(--superficie);
+  cursor: pointer;
+  overflow: hidden;
+  opacity: 0.55;
+  transition: opacity 0.2s, border-color 0.2s, transform 0.2s;
+}
+.ficha-miniaturas button:hover { opacity: 0.85; }
+.ficha-miniaturas button[aria-pressed="true"] { opacity: 1; border-color: var(--acento); box-shadow: 0 0 0 1px var(--acento); }
+.ficha-miniaturas img { display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; }
+
+.ficha-info { display: grid; gap: 48px; margin-top: clamp(64px, 9vw, 120px); }
+@media (min-width: 900px) {
+  .ficha-info { grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 88px; }
+}
+.ficha-texto h2, .ficha-tecnica h2, .ficha-codigo h2 {
+  margin: 0 0 14px;
+  font-family: var(--titulos);
+  font-variation-settings: "opsz" 48;
+  font-weight: 700;
+  font-size: clamp(26px, 2.6vw, 32px);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+.ficha-texto section + section { margin-top: 36px; }
+.ficha-texto p, .ficha-texto li { max-width: 56ch; font-size: clamp(18px, 1.6vw, 20px); line-height: 1.6; }
+.ficha-texto p { margin: 0 0 14px; }
+.ficha-texto ul { margin: 0; padding-left: 1.1em; }
+.ficha-texto li::marker { color: var(--acento); }
+.ficha-texto li + li { margin-top: 6px; }
+
+.ficha-grupo + .ficha-grupo { margin-top: 22px; }
+.ficha-grupo h3 { margin: 0 0 10px; color: var(--texto2); font-size: 14px; font-weight: 600; }
+.ficha-grupo ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.ficha-grupo li {
+  padding: 7px 14px;
+  border: 1px solid var(--borde-acento);
+  border-radius: 999px;
+  background: var(--chip);
+  font-size: 15px;
+  font-weight: 500;
+}
+
+/* El apartado del código: la salida principal de la página. */
+.ficha-codigo { margin-top: clamp(64px, 9vw, 120px); display: grid; gap: 18px; }
+.ficha-repo {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 18px 24px;
+  padding: clamp(24px, 4vw, 44px);
+  border: 1px solid var(--borde-acento);
+  border-radius: 26px;
+  background:
+    radial-gradient(600px 240px at 100% 0%, color-mix(in srgb, var(--acento) 18%, transparent), transparent 70%),
+    var(--superficie);
+  overflow: hidden;
+}
+.ficha-icono-codigo {
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 18px;
+  background: var(--fondo);
+  border: 1px solid var(--borde-fuerte);
+  color: var(--acento);
+}
+.ficha-repo h2 { margin: 0 0 4px; }
+.ficha-slug { margin: 0; color: var(--texto2); font-family: var(--mono); font-size: 15px; overflow-wrap: anywhere; }
+.ficha-boton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 26px;
+  border-radius: 999px;
+  background: var(--acento);
+  color: var(--fondo) !important;
+  font-weight: 600;
+  font-size: 16px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: transform 0.15s, filter 0.15s;
+}
+.ficha-boton:hover { filter: brightness(1.08); transform: translateY(-1px); }
+.ficha-boton:active { transform: none; }
+@media (max-width: 640px) {
+  .ficha-repo { grid-template-columns: auto minmax(0, 1fr); }
+  .ficha-boton { grid-column: 1 / -1; }
+}
+.ficha-otros { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 22px; }
+.ficha-otros h2 { width: 100%; }
+.ficha-otros a { color: var(--texto); text-underline-offset: 4px; text-decoration-color: var(--borde-acento); }
+
+.ficha-pie {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px 24px;
+  padding-block: 26px 40px;
+  border-top: 1px solid var(--borde);
+  font-size: 15px;
+}
+.ficha-pie a { color: var(--texto); text-underline-offset: 4px; }
+
+@keyframes ficha-cambio { from { opacity: 0; transform: scale(1.012); } }
+@media (prefers-reduced-motion: reduce) {
+  .ficha-pantalla img { animation: none; }
+  .ficha-miniaturas button, .ficha-boton, .ficha-volver { transition: none; }
+}

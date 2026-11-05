@@ -1,0 +1,37 @@
+{
+  "nombre": "Nicolás Vazzoler",
+  "enlaces": [],
+  "proyectos": [
+    {
+      "carpeta": "salon-ivana",
+      "titulo": "Salón Ivana",
+      "bajada": "Sistema de gestión para una peluquería: cobra, imprime el comprobante, agenda turnos y cierra la caja. Se usa todos los días desde una tablet en el mostrador.",
+      "estado": "En uso",
+      "anio": "2026",
+      "tema": { "fondo": "#100E0B", "superficie": "#191611", "borde": "#2C261D", "acento": "#E3B85B", "texto": "#EFE8DA", "texto2": "#BDB29F", "emblema": "corona" },
+      "resuelve": "Las ventas, los gastos, los turnos y el fiado se llevaban a mano, entre cuadernos, mensajes y la memoria de las empleadas. Ahora está todo en un solo lugar.",
+      "stack": ["Python", "FastAPI", "PostgreSQL", "JavaScript", "ESC/POS", "Railway"],
+      "bibliotecas": ["SQLAlchemy", "Pydantic", "Uvicorn", "openpyxl"],
+      "repo": "https://github.com/nicovazzoler/salon_ivana",
+      "capturas": [
+        { "archivo": "facturacion.png", "texto": "Facturación: catálogo por categorías, descuentos por línea y extras que ningún descuento toca" },
+        { "archivo": "agenda.png", "texto": "La agenda del día, una columna por empleada con su horario de fondo" },
+        { "archivo": "caja.png", "texto": "Cierre de caja con arqueo de efectivo" },
+        { "archivo": "ticket.png", "texto": "El comprobante, igual al que sale por la impresora térmica" }
+      ]
+    },
+    {
+      "carpeta": "autortv",
+      "titulo": "AutoRTV",
+      "bajada": "Convierte las grillas de programación que mandan los canales de TV, en Excel, PDF, HTML o texto pegado, en una guía normalizada y lista para cargar.",
+      "estado": "En desarrollo",
+      "anio": "2026",
+      "tema": { "fondo": "#0A0C10", "superficie": "#11141A", "borde": "#222833", "acento": "#7FB8FF", "texto": "#E6EAF0", "texto2": "#A9B2C0", "emblema": "terminal" },
+      "resuelve": "Cada canal manda su grilla en un formato distinto, y pasarla a mano al formato del sistema es repetitivo y es fácil equivocarse.",
+      "stack": ["Python", "FastAPI", "React", "PostgreSQL", "API de Claude"],
+      "bibliotecas": ["pandas", "pdfplumber", "Beautiful Soup", "openpyxl", "SQLAlchemy", "Playwright"],
+      "repo": "",
+      "capturas": []
+    }
+  ]
+}

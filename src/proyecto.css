@@ -66,6 +66,9 @@
 .ficha-estado { display: inline-flex; align-items: center; gap: 8px; color: var(--texto); }
 .ficha-estado::before { content: ""; width: 9px; height: 9px; border-radius: 50%; border: 1.5px solid var(--acento); }
 .ficha-estado.al-aire::before { background: var(--acento); box-shadow: 0 0 0 4px color-mix(in srgb, var(--acento) 22%, transparent); }
+.ficha-sitio { color: var(--acento); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+.ficha-sitio:hover { text-decoration-thickness: 2px; }
+.ficha-sitio:focus-visible { outline: 2px solid var(--acento); outline-offset: 3px; border-radius: 2px; }
 
 /* Las capturas: la elegida grande, como la pantalla del producto, y las otras abajo. */
 .escaparate { display: grid; gap: 16px; }

@@ -116,10 +116,15 @@ export function PaginaProyecto({ proyecto, nombre }) {
           <span className="ficha-emblema"><Icono tamano={28} /></span>
           <h1>{proyecto.titulo}</h1>
           <p className="ficha-bajada">{proyecto.bajada}</p>
-          {(proyecto.estado || proyecto.anio) && (
+          {(proyecto.estado || proyecto.anio || proyecto.sitio) && (
             <p className="ficha-meta">
               {proyecto.estado && <span className={alAire ? "ficha-estado al-aire" : "ficha-estado"}>{proyecto.estado}</span>}
               {proyecto.anio && <span>{proyecto.anio}</span>}
+              {proyecto.sitio && (
+                <a className="ficha-sitio" href={proyecto.sitio} target="_blank" rel="noopener">
+                  {proyecto.sitio.replace(/^https?:\/\//, "").replace(/\/$/, "")}
+                </a>
+              )}
             </p>
           )}
         </section>

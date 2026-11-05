@@ -1,0 +1,175 @@
+:root {--titulos: "Bricolage Grotesque", system-ui, sans-serif;
+  --cuerpo: "Geist", system-ui, sans-serif;
+  --mono: "Geist Mono", ui-monospace, monospace;
+  color-scheme: dark;}
+* {box-sizing: border-box;}
+body {margin: 0;
+  background: #0B0B0C;
+  font-family: var(--cuerpo);}
+.tema {--activo: color-mix(in srgb, var(--acento) 10%, var(--fondo));
+  --borde-acento: color-mix(in srgb, var(--acento) 35%, var(--fondo));
+  --borde-fuerte: color-mix(in srgb, var(--borde), var(--texto) 8%);
+  --chip: color-mix(in srgb, var(--acento) 8%, var(--superficie));
+  color: var(--texto);}
+a {color: var(--texto);}
+a:hover {color: #FFFFFF;}
+:focus-visible {outline: 2px solid var(--acento); outline-offset: 2px;}
+.acento {color: var(--acento);}
+.tenue {color: var(--texto2);}
+.rotulo {font-family: var(--mono);
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--texto2);}
+.chips {display: flex; gap: 8px; flex-wrap: wrap;}
+.chip {font-family: var(--mono);
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: var(--chip);
+  color: var(--acento);}
+.puntos {background-image: radial-gradient(rgba(237, 235, 230, .09) 1px, transparent 1px);
+  background-size: 22px 22px;}
+.lineas-terminal {background-image: repeating-linear-gradient(0deg, rgba(237, 235, 230, .05) 0 1px, transparent 1px 6px);}
+.inicio {background-color: var(--fondo); min-height: 100vh;}
+.contenedor {max-width: 1280px; margin: 0 auto; padding: 0 32px;}
+.cabecera-centro {display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  padding: 28px 0;}
+.logo {display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  font-family: var(--titulos);
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: -0.02em;}
+.heroe {display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 48px;
+  padding: 72px 0 88px;}
+.heroe-texto {flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 28px;}
+.heroe h1 {margin: 0;
+  font-family: var(--titulos);
+  font-weight: 800;
+  font-size: clamp(48px, 8vw, 112px);
+  line-height: 0.92;
+  letter-spacing: -0.045em;
+  text-wrap: balance;}
+.heroe p {margin: 0; max-width: 520px; font-size: 19px; line-height: 1.55; color: var(--texto2);}
+.heroe-dibujo {flex: 1 1 360px; display: flex; justify-content: center;}
+.robot-grande {max-width: 100%; height: auto;}
+.botones {display: flex; gap: 12px; flex-wrap: wrap;}
+.boton-principal {display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 0 24px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 16px;}
+.boton-principal {background: var(--acento); color: var(--fondo); font-weight: 600;}
+.boton-principal:hover {color: var(--fondo); filter: brightness(1.08);}
+.bloque {display: flex; flex-direction: column; gap: 32px; padding-bottom: 88px;}
+.titulo-bloque {display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  border-top: 1px solid var(--borde);
+  padding-top: 28px;}
+.titulo-bloque > div {display: flex; flex-direction: column; gap: 12px;}
+.titulo-bloque h2 {margin: 0;
+  font-family: var(--titulos);
+  font-weight: 700;
+  font-size: 44px;
+  letter-spacing: -0.03em;}
+.fila-arriba {position: relative; display: flex; justify-content: space-between; align-items: start; gap: 16px;}
+.fila-abajo {position: relative; display: flex; flex-direction: column; gap: 10px;}
+.emblema {width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  border: 1px solid var(--acento);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--acento);}
+.estado {font-family: var(--mono);
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--borde-acento);
+  color: var(--acento);}
+.centrado {padding: 96px 24px; text-align: center;}
+@media (max-width: 640px) {
+  .contenedor {padding: 0 16px;}
+  .heroe {padding: 40px 0 56px;}
+  .titulo-bloque h2 {font-size: 34px;}
+  .robot-grande {max-width: 240px;}
+}
+button {font: inherit; cursor: pointer;}
+button:disabled {cursor: not-allowed; opacity: 0.55;}
+@keyframes latido { 50% { opacity: 0.55; } }
+button.boton-principal {border: 0; cursor: pointer;}
+button.boton-principal:disabled {filter: none;}
+@keyframes latido { 50% { opacity: 0.35; } }
+@media (prefers-reduced-motion: no-preference) {
+  .robot-grande .ojo {transform-box: fill-box; transform-origin: center; animation: parpadeo 5.5s infinite;}
+  .robot-grande .antena {animation: latido 2.4s ease-in-out infinite;}
+  @supports (animation-timeline: view()) {
+    .aparece {animation: aparecer linear both; animation-timeline: view(); animation-range: entry 0% cover 22%;}
+  }
+}
+@keyframes parpadeo { 0%, 92%, 100% { transform: scaleY(1); } 95% { transform: scaleY(0.1); } }
+@keyframes aparecer { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: none; } }
+.lista-vitrinas {display: flex; flex-direction: column; gap: 24px;}
+.tarjeta-vitrina {display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+  overflow: hidden;
+  border: 1px solid var(--borde-fuerte);
+  border-radius: 24px;
+  background: var(--fondo);
+  color: var(--texto);
+  text-decoration: none;
+  transition: border-color 0.15s, translate 0.2s;}
+.tarjeta-vitrina:hover {color: var(--texto); border-color: var(--borde-acento); translate: 0 -4px;}
+.imagen-vitrina {position: relative; min-height: 340px; overflow: hidden; border-right: 1px solid var(--borde); background: var(--superficie);}
+.imagen-vitrina img {position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top left;}
+.sin-captura {position: absolute; inset: 0; display: flex; align-items: flex-end; padding: 32px;}
+.sin-captura .marca {position: absolute; inset: 0; color: var(--acento); opacity: 0.25;}
+.sin-captura svg.marca {inset: 12% 14% 22%;}
+.sin-captura span {position: relative;
+  font-family: var(--titulos);
+  font-size: clamp(40px, 6vw, 72px);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--acento);}
+.texto-vitrina {display: flex; flex-direction: column; justify-content: space-between; gap: 40px; padding: 32px;}
+.tarjeta-vitrina .nombre {margin: 0; font-family: var(--titulos); font-size: 44px; font-weight: 800; line-height: 1; letter-spacing: -0.035em;}
+.tarjeta-vitrina .fila-abajo p {margin: 0; font-size: 17px; line-height: 1.5;}
+.tarjeta-vitrina .chips {margin: 0; padding: 4px 0 0; list-style: none;}
+.tarjeta-vitrina .ver {padding-top: 6px; color: var(--acento); font-weight: 600;}
+.pie-portfolio {display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px 20px;
+  padding: 28px 0 40px;
+  border-top: 1px solid var(--borde);
+  color: var(--texto2);
+  font-size: 14px;}
+.pie-portfolio nav {display: flex; gap: 16px;}
+.pie-portfolio a {color: var(--texto2); text-underline-offset: 3px;}
+.pie-portfolio a:hover {color: var(--acento);}
+@media (max-width: 860px) {
+  .tarjeta-vitrina {grid-template-columns: minmax(0, 1fr);}
+  .imagen-vitrina {min-height: 0; aspect-ratio: 16 / 10; border-right: 0; border-bottom: 1px solid var(--borde);}
+}
+@media (max-width: 640px) {
+  .texto-vitrina {gap: 28px; padding: 22px;}
+  .tarjeta-vitrina .nombre {font-size: 34px;}
+}

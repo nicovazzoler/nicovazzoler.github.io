@@ -32,6 +32,25 @@
       "bibliotecas": ["pandas", "pdfplumber", "Beautiful Soup", "openpyxl", "SQLAlchemy", "Playwright"],
       "repo": "https://github.com/nicovazzoler/autortv",
       "capturas": []
+    },
+    {
+      "carpeta": "ubuntu-estudio",
+      "titulo": "Ubuntu Estudio",
+      "bajada": "Catálogo online de un emprendimiento de velas, souvenirs y deco hecho a mano. La dueña sube las fotos a una carpeta de Drive desde el celular y la página se actualiza sola.",
+      "estado": "En uso",
+      "anio": "2026",
+      "sitio": "https://ubuntu-estudio.pages.dev",
+      "tema": { "fondo": "#1E1A18", "superficie": "#28221F", "borde": "#3B342F", "acento": "#CCCEC2", "texto": "#F3EBE2", "texto2": "#B8ADA1", "emblema": "vela" },
+      "resuelve": "Casi todo se hace a pedido, así que la página no vende: muestra los productos y cada consulta abre WhatsApp con el producto ya escrito en el mensaje. Para cargar uno no hace falta tocar código: cada subcarpeta de Drive es una categoría, y el nombre de la foto es el nombre del producto y, si lo lleva, su precio. Cada hora una tarea guarda una copia en el repositorio, por si Drive no responde.",
+      "stack": ["HTML", "CSS", "JavaScript", "API de Google Drive", "GitHub Actions", "Cloudflare Pages"],
+      "bibliotecas": ["sharp"],
+      "repo": "https://github.com/nicovazzoler/ubuntu",
+      "capturas": [
+        { "archivo": "hero.jpg", "texto": "La portada y las categorías, armadas solas a partir de las carpetas de Drive" },
+        { "archivo": "catalogo.jpg", "texto": "El catálogo con filtro por categoría; cada producto tiene su botón de consulta" },
+        { "archivo": "visor.jpg", "texto": "El visor: foto grande, flechas para recorrer y la consulta por WhatsApp con el producto ya escrito" },
+        { "archivo": "portada.jpg", "texto": "La entrada, con la marca" }
+      ]
     }
   ]
 }

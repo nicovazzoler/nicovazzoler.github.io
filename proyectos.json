@@ -30,7 +30,7 @@
       "resuelve": "Cada canal manda su grilla en un formato distinto, y pasarla a mano al formato del sistema es repetitivo y es fácil equivocarse.",
       "stack": ["Python", "FastAPI", "React", "PostgreSQL", "API de Claude"],
       "bibliotecas": ["pandas", "pdfplumber", "Beautiful Soup", "openpyxl", "SQLAlchemy", "Playwright"],
-      "repo": "",
+      "repo": "https://github.com/nicovazzoler/autortv",
       "capturas": []
     }
   ]

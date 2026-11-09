@@ -1,17 +1,12 @@
-import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
-import datos from "../proyectos.json";
-import { Portada } from "./Portada.jsx";
-import { PaginaProyecto } from "./Proyecto.jsx";
+import { createRoot, hydrateRoot } from "react-dom/client";
+import { Pagina } from "./Pagina.jsx";
 import "./base.css";
 import "./proyecto.css";
 
 // La carpeta de la dirección dice qué página es: /salon-ivana/ es ese proyecto, / es la portada.
 const carpeta = window.location.pathname.split("/").filter(Boolean)[0];
-const proyecto = datos.proyectos.find((p) => p.carpeta === carpeta);
+const raiz = document.getElementById("raiz");
 
-createRoot(document.getElementById("raiz")).render(
-  <StrictMode>
-    {proyecto ? <PaginaProyecto proyecto={proyecto} nombre={datos.nombre} /> : <Portada datos={datos} />}
-  </StrictMode>,
-);
+// Las páginas llegan ya armadas en HTML (ver prerender.mjs): React solo las retoma. La 404 llega vacía y se arma acá.
+if (raiz.hasChildNodes()) hydrateRoot(raiz, <Pagina carpeta={carpeta} />);
+else createRoot(raiz).render(<Pagina carpeta={carpeta} />);

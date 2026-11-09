@@ -1,6 +1,17 @@
 {
   "nombre": "Nicolás Vazzoler",
-  "enlaces": [],
+  "contacto": {
+    "whatsapp": "5491157979172",
+    "mensaje": "Hola Nicolás, vi tu portfolio y quería hablar con vos.",
+    "mail": "nicovazzoler99@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/nicovazzoler/",
+    "cv": "/cv/CV_Nicolas_Vazzoler.pdf"
+  },
+  "enlaces": [
+    { "texto": "LinkedIn", "url": "https://www.linkedin.com/in/nicovazzoler/" },
+    { "texto": "nicovazzoler99@gmail.com", "url": "mailto:nicovazzoler99@gmail.com" },
+    { "texto": "CV (PDF)", "url": "/cv/CV_Nicolas_Vazzoler.pdf" }
+  ],
   "proyectos": [
     {
       "carpeta": "salon-ivana",
@@ -23,11 +34,11 @@
     {
       "carpeta": "autortv",
       "titulo": "AutoRTV",
-      "bajada": "Convierte las grillas de programación que mandan los canales de TV, en Excel, PDF, HTML o texto pegado, en una guía normalizada y lista para cargar.",
+      "bajada": "Agentes de IA que aprenden a leer la grilla de cada canal de TV (Excel, PDF, HTML o texto pegado) y la convierten en una guía normalizada, con el gasto de cada pedido medido y con tope.",
       "estado": "En desarrollo",
       "anio": "2026",
       "tema": { "fondo": "#0A0C10", "superficie": "#11141A", "borde": "#222833", "acento": "#7FB8FF", "texto": "#E6EAF0", "texto2": "#A9B2C0", "emblema": "terminal" },
-      "resuelve": "Cada canal manda su grilla en un formato distinto, y pasarla a mano al formato del sistema es repetitivo y es fácil equivocarse.",
+      "resuelve": "Cada canal manda su grilla en un formato distinto, y pasarla a mano al formato del sistema es repetitivo y es fácil equivocarse. En AutoRTV, Claude Haiku propone las reglas de cada canal y el servidor las prueba contra ejemplos reales; si no alcanzan, un agente con Sonnet y herramientas sigue hasta 24 pasos, con un tope de US$ 2 por señal. El código que escribe el agente corre aislado, sin red ni archivos. Cada pedido registra tokens y costo, y un banco de pruebas compara qué logra cada modelo y cuánto cuesta. Nada se aplica sin que una persona lo apruebe.",
       "stack": ["Python", "FastAPI", "React", "PostgreSQL", "API de Claude"],
       "bibliotecas": ["pandas", "pdfplumber", "Beautiful Soup", "openpyxl", "SQLAlchemy", "Playwright"],
       "repo": "https://github.com/nicovazzoler/autortv",

@@ -38,6 +38,8 @@ function Tarjeta({ proyecto }) {
 
 export function Portada({ datos }) {
   useEffect(() => { document.title = `Proyectos · ${datos.nombre}`; }, []);
+  const c = datos.contacto;
+  const wpp = `https://wa.me/${c.whatsapp}?text=${encodeURIComponent(c.mensaje)}`;
   return (
     <div className="inicio puntos tema" style={variables(CENTRO)}>
       <div className="contenedor">
@@ -53,8 +55,15 @@ export function Portada({ datos }) {
               Herramientas armadas para problemas reales. Cada una con capturas, qué resuelve, con qué está hecha y
               su código.
             </p>
+            <p className="disponible">
+              <b>Analista de datos y automatización.</b> Abierto a propuestas · remoto, híbrido o presencial desde
+              zona oeste (GBA).
+            </p>
             <div className="botones">
-              <a href="#proyectos" className="boton-principal">Ver proyectos</a>
+              <a href={wpp} className="boton-principal" target="_blank" rel="noopener">Escribime por WhatsApp</a>
+              <a href={`mailto:${c.mail}`} className="boton-secundario">{c.mail}</a>
+              <a href={c.linkedin} className="boton-secundario" target="_blank" rel="me noopener">LinkedIn</a>
+              <a href={c.cv} className="boton-secundario" download>Descargar CV</a>
             </div>
           </div>
           <div className="heroe-dibujo"><RobotPiezas proyectos={datos.proyectos} /></div>

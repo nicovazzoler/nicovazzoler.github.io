@@ -64,7 +64,10 @@ a:hover {color: #FFFFFF;}
 .heroe-dibujo {flex: 1 1 360px; display: flex; justify-content: center;}
 .robot-grande {max-width: 100%; height: auto;}
 .botones {display: flex; gap: 12px; flex-wrap: wrap;}
-.boton-principal {display: inline-flex;
+.heroe p.disponible {font-size: 16px; color: var(--texto);}
+.disponible::before {content: ""; display: inline-block; width: 8px; height: 8px; margin-right: 10px;
+  border-radius: 50%; background: var(--acento); vertical-align: middle;}
+.boton-principal, .boton-secundario {display: inline-flex;
   align-items: center;
   gap: 10px;
   min-height: 52px;
@@ -74,6 +77,8 @@ a:hover {color: #FFFFFF;}
   font-size: 16px;}
 .boton-principal {background: var(--acento); color: var(--fondo); font-weight: 600;}
 .boton-principal:hover {color: var(--fondo); filter: brightness(1.08);}
+.boton-secundario {border: 1px solid var(--borde); color: var(--texto); font-weight: 500;}
+.boton-secundario:hover {border-color: var(--acento); color: var(--acento);}
 .bloque {display: flex; flex-direction: column; gap: 32px; padding-bottom: 88px;}
 .titulo-bloque {display: flex;
   align-items: end;
